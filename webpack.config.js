@@ -9,7 +9,7 @@ module.exports = {
     entry: './src/js/index.js',
 
     output: {
-        publicPath: '/',
+        publicPath: './',
         path: path.resolve(__dirname, 'build'),
         filename: 'js/bundle.js'
     },
@@ -41,7 +41,7 @@ module.exports = {
               {
                 loader: 'file-loader',
                 options: {
-                  name: '[path][name].[ext]',
+                  name: '[name].[ext]',
                   outputPath: "images",
                 },
               },
@@ -54,7 +54,7 @@ module.exports = {
               {
                 loader: 'file-loader',
                 options: {
-                  name: '[path].[ext]',
+                  name: '[path] [name].[ext]',
                   outputPath: "fonts",
                 },
               },
@@ -91,6 +91,42 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             filename: 'index.html',
+        }),
+
+
+        new HtmlWebpackPlugin({
+          template: './src/projects.html',
+          filename: 'projects.html',
+        }),
+
+        new HtmlWebpackPlugin({
+          template: './src/project-details.html',
+          filename: 'project-details.html',
+        }),
+
+        new HtmlWebpackPlugin({
+          template: './src/blog.html',
+          filename: 'blog.html',
+        }),
+
+        new HtmlWebpackPlugin({
+          template: './src/blog-details.html',
+          filename: 'blog-details.html',
+        }),
+
+        new HtmlWebpackPlugin({
+          template: './src/add-blog.html',
+          filename: 'add-blog.html',
+        }),
+
+        new HtmlWebpackPlugin({
+          template: './src/about.html',
+          filename: 'about.html',
+        }),
+
+        new HtmlWebpackPlugin({
+          template: './src/contact.html',
+          filename: 'contact.html',
         }),
 
         new MiniCssExtractPlugin({
